@@ -1,0 +1,1675 @@
+1. AdditionOfTwoUserNumbers:- 
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter First Number");
+		int numb1= sc.nextInt();
+		System.out.println("Enter Second Number");
+		int numb2= sc.nextInt();
+		int sum = numb1 + numb2;
+		sc.close();
+		System.out.println("Sum of two Number:"+ sum);
+		
+	}
+======================================================================================================================================================
+
+2. AreaofCircle
+
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Radius of Circle:");
+		double radius= sc.nextDouble();
+		sc.close();
+		System.out.println("Area of circle with given radius "+radius+" is"+ " "+(Math.PI*radius*radius));
+			
+	}
+
+========================================================================================================================================================
+
+3. AreaofRectangles
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);	
+		System.out.println("Enter Height: ");
+		double height= sc.nextDouble();
+		System.out.println("Enter Width: ");
+		double width= sc.nextDouble();
+		sc.close();
+		System.out.println("Area of Rectanle is: "+ (height*width));
+	}
+
+=======================================================================================================================================================
+
+4. ArmstrongNumber
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number:-");
+		int num = sc.nextInt(); // 153
+		sc.close();
+		int originalNum= num;
+		int cubbedNumber= 0;
+		
+		while(num>0) {
+			int reminder= num %10; //3,5
+			cubbedNumber= cubbedNumber+ (reminder*reminder*reminder);// (0+27), (27+125),(152+1)
+			num= num/10; //15, 1
+		}
+		if(originalNum==cubbedNumber) {
+			System.out.println(originalNum+" is Armstrong Number");
+		}else {
+			System.out.println(originalNum+" is not Armstrong Number");
+		}
+	}
+
+======================================================================================================================================================
+
+5. CheckEvenOddNumbers
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number");
+		
+		int Num= sc.nextInt();
+		
+		// Even Odd Number
+		if(Num%2==0) {
+			System.out.println("Number is Even"+Num);
+		}else {
+			System.out.println("Number is Odd"+Num);
+		}
+		sc.close();
+	}
+
+EvenOddInGivenRange
+
+public static void main(String[] args) {
+
+	for(int i=1; i<10; i++){
+		if(i%2==0) {
+			System.out.println("Number is Even"+Num);
+		}else {
+			System.out.println("Number is Odd"+Num);
+		}		
+
+=====================================================================================================================================================
+
+6. Number Table 
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number");
+		
+		int Num= sc.nextInt();
+	// Number table 
+		for (int j = 1; j <=10; j++) {
+		
+			System.out.println(Num+"x"+j+"="+ (Num*j));
+		}
+	}
+======================================================================================================================================================
+
+7. CheckLeapYear
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Year:");
+		int year= sc.nextInt();
+		boolean isLeapYear= false;
+		
+		if (year%4==0) {                  //1. 1300%4==0 -> true  || 2. 1600%4==0 -> true || 3. 1996%4==0 -> true || 4. 1995%4== 0-> false
+			if (year%100==0) {         //1. 1300%100==0 -> true  || 2. 1600%100==0 -> true || 3. 1996%100==0 -> false
+				if (year%400==0) {  //1. 1300%400==0 -> false || 2. 1600%400==0 -> true
+					isLeapYear= true; //2. 1600%400==0 -> true
+				}else {
+					isLeapYear= false; //1.1300%400==0 -> false
+				}
+			}else {
+				isLeapYear= true; //3. 1996%100==0 -> false
+			}
+		}else {
+			isLeapYear= false;  // 4. 1995%4== 0-> false
+		}
+		if (isLeapYear) {
+			System.out.println("Given year "+year+"is Leap year");
+		}else {
+			System.out.println("Given year"+year+"is not Leap year");
+		}
+	}
+===================================================================================================================================================
+
+8. FactorialOfNumber
+
+public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Number:-");
+		int num = sc.nextInt();
+		sc.close();
+		int fact= factorial(num);
+		System.out.println("Factorial of Number is:- "+ fact);
+	}
+	
+	public static int factorial(int n) {
+		
+		if(n==0) { //4  3  2  1 0
+			return 1;
+		}else {
+			return n* factorial(n-1); //4*f(3) 4*3*f(2) 4*3*2*f(1) 4*3*2*1*f(0) 4*3*2*1*1
+		}
+	}
+==================================================================================================================================================
+
+9. Fibonacci
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number: ");
+		
+		int num= sc.nextInt(); // 10
+		sc.close();
+		int a=1,b=1;
+		System.out.print(a+" "+b+" "); // 1 1
+		int f=0;
+		while(f<=num) { //0<=10 2<=10 3<=10 5<=10 8<=10
+		
+			f=a+b;  //f=1+1 1+2 2+3 3+5 5+8
+			if (f>num) //2>10,3>10,5>10,8>10=false 13>10=true
+				break;
+			System.out.print(f+" ");// 2 3 5 8
+			a=b; // a=1 2 3 5
+			b=f; // b=2 3 5 8
+		}
+	}
+=================================================================================================================================================
+
+10. FindPowerOfNumber
+
+public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter Number: ");
+		int number= sc.nextInt();
+		System.out.println("Enter Power:");
+		int power= sc.nextInt();
+		
+		int intialNumber= number;
+		sc.close();
+		
+		for (int i = 1; i <power; i++) {
+			number= intialNumber*number;
+		}
+		System.out.println(intialNumber+" power "+power+" is: "+ number );
+	}
+=================================================================================================================================================
+
+11. FindQuoteintandReminder
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter First Number:");
+		int Num1= sc.nextInt();
+		System.out.println("Enter Second Number");
+		int Num2= sc.nextInt();
+		sc.close();
+		
+		System.out.println("Reminder is "+ (Num1%Num2));
+		System.out.println("Quetiont is "+ (Num1/Num2));		
+	}
+================================================================================================================================================
+
+12. PalindromeNumber
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number: ");
+		int originalNumber= sc.nextInt();
+		
+		int num= originalNumber;
+		int reverseNum=0;
+		
+		int reminder;
+		//Logic for reversing number
+		while(num>0) {
+			reminder=num%10;
+			num=num/10;
+			reverseNum=reverseNum*10+ reminder;
+		}
+		//compare original number and reverse number
+		if(reverseNum==originalNumber) {
+			System.out.println("Given number is palindrome");
+		}else {
+			System.out.println("Given number is not palindrome");
+		}
+	}
+================================================================================================================================================
+
+13. PalindromeString
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter String:");
+		String originalString= sc.nextLine();
+		sc.close();
+		char []ca= originalString.toCharArray();
+		String reverseString="";
+		
+		for (int i= ca.length-1; i>=0; i--) {
+			reverseString=reverseString + ca[i];
+		}
+		if (originalString.equals(reverseString)) {
+			System.out.println("String is palindrome");
+		}else {
+			System.out.println("String is not palindrome");
+		}
+	}
+================================================================================================================================================
+
+14. PerimeterOfCircle
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Radius of Circle:");
+		double radius= sc.nextDouble();
+		sc.close();
+		
+		System.out.println("Perimeter of Circle: "+ (2*Math.PI*radius));
+	}
+================================================================================================================================================
+
+15. RectanlePerimeter
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Width: ");
+		double width= sc.nextDouble();
+		System.out.println("Enter Height: ");
+		double height= sc.nextDouble();
+		sc.close();
+		
+		System.out.println("Perimeter of rectanle: "+ (2*(width+height)));
+	}
+================================================================================================================================================
+
+16. ResverseString1
+
+public static void main(String[] args) {
+		String Str = "My Name is Kapil";
+		String reversString = "";
+		char[] ca = Str.toCharArray();
+
+		for (int i = ca.length - 1; i >= 0; i--) {
+			reversString = reversString + ca[i];
+		}
+		System.out.println(reversString);
+	}
+================================================================================================================================================
+
+17. StringCountDetails
+
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter text here: ");
+
+		String Str = sc.nextLine();
+		char[] ca = Str.toCharArray();
+		sc.close();
+
+		int digits = 0;
+		int letters = 0;
+		int spaces = 0;
+		int others = 0;
+
+		for (Character c : ca) {
+			if (Character.isDigit(c)) {
+				digits++;
+			} else if (Character.isLetter(c)) {
+				letters++;
+			} else if (Character.isSpaceChar(c)) {
+				spaces++;
+			} else {
+				others++;
+			}
+		}
+		System.out.println("No of digits: " + digits);
+		System.out.println("No of letters: " + letters);
+		System.out.println("No of spaces: " + spaces);
+		System.out.println("No of others: " + others);
+	}
+================================================================================================================================================
+
+18. StringDuplicateCharacterWithCount
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String:");
+		String Str = sc.nextLine();
+		sc.close();
+		char[] ca = Str.toCharArray();
+		Map<Character, Integer> m = new HashMap<Character, Integer>();
+
+		for (Character c : ca) {
+
+			if (m.containsKey(c)) {
+				m.put(c, m.get(c) + 1);
+			} else {
+				m.put(c, 1);
+			}
+		}
+		for (Character c : m.keySet()) {
+			System.out.println("Character " + c + " is repeated " + m.get(c) + " times.");
+
+			// print only repeated character
+			if (m.get(c) > 1) {
+				System.out.println("Character " + c + " is repeated " + m.get(c) + " times.");
+			}
+		}
+================================================================================================================================================
+
+19. StringToInt
+
+public static void main(String[] args) {
+		// String to integer
+		String str= "9";
+	//	int num1= Integer.parseInt(str);
+		
+		int num1= Integer.valueOf(str);
+		System.out.println(num1+3);
+
+		// Integer to string		
+		int a=486975;
+		String Sr= Integer.toString(a);
+		System.out.println(Sr.length());
+		System.out.println(Sr.charAt(5));
+	}
+================================================================================================================================================
+
+20. SumofAlldigitsinNumber
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number: ");
+		int number = sc.nextInt();
+		int sum = 0;
+
+		while (number != 0) {
+			int reminder = number % 10;
+			sum = sum + reminder;
+			number = number / 10;
+		}
+		System.out.println("Sum of digits in number: " + sum);
+	}
+================================================================================================================================================
+
+21. SumofEvenNumberFromGivenRange
+
+public static void main(String[] args) {
+		int sum = 0;
+		for (int i = 1; i <= 100; i++) {
+			if (i % 2 == 0) {
+				sum = sum + i;
+			}
+		}
+		System.out.println("Sum of Even Numbers: " + sum);
+	}
+================================================================================================================================================
+
+22. SumofFirstHundreadNumber
+
+public static void main(String[] args) {
+		int sum = 0;
+		for (int i = 1; i <= 100; i++) {
+			sum = sum + i;
+		}
+		System.out.println("sum of first hundread number is: " + sum);
+	}
+================================================================================================================================================
+
+23. SwipeNumbers
+
+public static void main(String[] args) {
+		// with use of third variable;
+		int a = 5;
+		int b = 8;
+		int temp;
+		temp = a; // temp=5
+		a = b;    // a=8
+		b = temp; // b=5
+		System.out.println("Value of a after swiping " + a);
+		System.out.println("Value of b after swiping " + b);
+
+		// without use of third variable
+		a = a + b; // a=13
+		b = a - b; // b= 5
+		a = a - b; // a= 8
+		System.out.println("Value of a after swiping " + a);
+		System.out.println("Value of b after swiping " + b);
+	}
+
+StringSwap
+
+	public static void main(String[] args) {	
+		String str1 = "abc";
+		String str2 = "def";
+		
+		System.out.println("String before swapping: "+str1+" "+ str2);
+		//Concatenate both the string str1 and str2 and store it in str1   
+		str1 = str1 + str2;
+		//Extract str2 from updated str1  
+		str2= str1.substring(0, (str1.length()- str2.length()));
+		//Extract str1 from updated str1
+		str1= str1.substring(str2.length());
+		System.out.println("String after swapping: "+str1+" "+ str2);
+	}
+================================================================================================================================================
+
+24. VowelCheck
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter chararter");
+		char c = sc.next().charAt(0);
+		boolean isVowel = false;
+
+		switch (c) {
+		case 'a':
+		case 'e':
+		case 'i':
+		case 'o':
+		case 'u':
+		case 'A':
+		case 'E':
+		case 'I':
+		case 'O':
+		case 'U':
+			isVowel = true;
+		}
+		if (isVowel) {
+			System.out.println(c + " is vowel");
+		} else {
+			System.out.println(c + " is not vowel");
+		}
+	}
+================================================================================================================================================
+
+25. RemoveDuplicatesFromArrayUsingHashSet
+
+public static void main(String[] args) {
+		
+		int [] a= {5,3,4,5,5,4,9,7,6,9};
+		Set<Integer> set= new HashSet<Integer>();
+
+		for (int i = 0; i < a.length; i++) {
+			set.add(a[i]);
+		}
+		Integer[] b = set.toArray(new Integer[set.size()]);
+		System.out.println(Arrays.toString(b));
+	}
+================================================================================================================================================
+26. DeleteDuplicatesFromSortedArrayUsingIndex
+
+public static void main(String[] args) {	
+		int []a= {3,4,4,5,5,5,6,7,9,9};
+		int j=0;
+		
+		for(int i=0;i<a.length-1;i++) {
+			if(a[i]!=a[i+1]) {
+				a[j]=a[i];
+				j++;
+			}
+		}
+		a[j]=a[a.length-1];
+		for(int k=0; k<=j;k++) {
+			System.out.print(a[k]+" ");
+		}
+	}
+================================================================================================================================================
+27. FindDuplicateInArrayUsingIndex
+
+
+public static void main(String[] args) {
+		int[] a = { 3, 4, 5, 3, 6, 4 };
+
+		for (int i = 0; i < a.length; i++) { // 0<6
+			for (int j = i + 1; j < a.length; j++) {// 0-6<6
+				if (a[i] == a[j]) {
+					System.out.println(a[i] + " is duplicated in array");
+				}
+			}
+		}
+	}
+================================================================================================================================================
+28. FindDuplicateInArrayUsingHashSet
+
+public static void main(String[] args) {
+		int[] a = { 3, 4, 5, 3, 6, 4 };
+		HashSet<Integer> hset = new HashSet<Integer>();
+
+		for (int i = 0; i < a.length; i++) {
+			if (hset.add(a[i]) == false) {
+				System.out.println(a[i] + " is duplicate in array");
+			}
+		}
+	}
+================================================================================================================================================
+29. CountNoOfDigitsInNumber
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number:");
+		int num= sc.nextInt();
+		
+		int digitCount=0;
+		while(num>0) {
+			digitCount++;
+			num= num/10;
+		}
+		System.out.println("Total Digit in Number= "+ digitCount);
+	}
+================================================================================================================================================
+30. SumOfDigitsInNumber
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number:");
+		int num =sc.nextInt();
+		sc.close();
+		int sumOfDigits=0;
+		while(num>0) {
+			int reminder= num%10;
+			sumOfDigits=sumOfDigits+ reminder;
+			num= num/10;
+		}
+		System.out.println("Sum of digits in number= "+sumOfDigits);
+	}
+================================================================================================================================================
+31. CheckNoOfEvenOddDigitsInNumber
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number:");
+		int num = sc.nextInt();
+
+		int evenCount=0;
+		int oddCount=0;
+		while (num > 0) {
+			int reminder = num % 10;
+			if (reminder % 2 == 0) {
+				evenCount++;
+			} else {
+				oddCount++;
+			}
+			num = num / 10;
+		}
+		System.out.println("Number of Even Digits= "+ evenCount);
+		System.out.println("Number of Odd Digits= "+ oddCount);
+	}
+================================================================================================================================================
+32. LargestOfThreeNumbers
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter First Number: ");
+		int firstNum= sc.nextInt();
+		System.out.println("Enter Second Number: ");
+		int secondNum= sc.nextInt();
+		System.out.println("Enter Third Number: ");
+		int thirdNum= sc.nextInt();
+		
+		if (firstNum>secondNum && firstNum>thirdNum) {
+			System.out.println("First Number is Largest Number in given three Number: "+ firstNum);
+		}else if(secondNum>thirdNum){
+			System.out.println("Second Number is Largest Number in given three Number: "+ secondNum);
+		}else {
+			System.out.println("Third Number is Largest Number in given three Number: "+ thirdNum);
+		}
+	}
+================================================================================================================================================
+33. SumOfAllElementInArray
+
+public static void main(String[] args) {
+		int[] a = { 4, 5, 6, 7, 8, 9 };
+		int sum = 0;
+		for (int i : a) {
+			sum = sum + i;
+		}
+	System.out.println("Sum of All the elements in given array is= "+sum);
+	}
+================================================================================================================================================
+34. PrintEvenOddNumberInArray
+
+public static void main(String[] args) {
+		int[] a = { 5, 8, 9, 6, 7, 4, 3, 2, 1 };
+
+		System.out.println("Even No in Arrays:- ");
+		for (int i : a) {
+			if (i % 2 == 0) {
+				System.out.print(i + " ");
+			}
+		}
+		System.out.println();
+
+		System.out.println("Odd No in Arrays:- ");
+		for (int i : a) {
+			if (i % 2 != 0) {
+				System.out.print(i + " ");
+			}
+		}
+	}
+================================================================================================================================================
+35. ReverseNumber
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number= ");
+		int num = sc.nextInt();
+		int reverseNum = 0;
+
+		while (num > 0) {
+			int reminder = num % 10;
+			reverseNum = (reverseNum * 10) + reminder;
+			num = num / 10;
+		}
+		System.out.println("Reverse Number= " + reverseNum);
+	}
+================================================================================================================================================
+36. CompareTwoArrays
+
+public static void main(String[] args) {
+		int[] a = { 1, 2, 3, 4 };
+		int[] b = { 1, 2, 3, 4 };
+
+		boolean comparisionSatus = true;
+		if (a.length == b.length) {
+			for (int i = 0; i < a.length; i++) {
+				if (a[i] != b[i]) {
+					comparisionSatus = false;
+					break;
+				}
+			}
+		} else {
+			comparisionSatus = false;
+		}
+		if (comparisionSatus) {
+			System.out.println("Both the arrays are equal.");
+		} else {
+			System.out.println("Both arrays are not equal.");
+		}
+	}
+================================================================================================================================================
+37. MissingInArrays
+
+public static void main(String[] args) {
+
+		int[] a = { 1, 2, 3, 4, 6 };
+		int sumWithoutMiss = 0;
+
+		for (int i = 1; i <= 6; i++) {
+			sumWithoutMiss = sumWithoutMiss + i;
+			// System.out.print(sumWithoutMiss);
+		}
+		int sumWithMiss = 0;
+		for (int e : a) {
+			sumWithMiss = sumWithMiss + e;
+			// System.out.println(sumWithMiss);
+		}
+		System.out.println("Missing Element in array:- " + (sumWithoutMiss - sumWithMiss));
+================================================================================================================================================
+38. MaxMinInArray
+
+	public static void main(String[] args) {
+		int[] a = { 91, 29, 47, 58, 35, 63, 87, 78, 17 };
+		int max = a[0];
+		int min = a[0];
+
+		for (int i = 0; i < a.length; i++) {
+			if (max < a[i]) {
+				max = a[i];
+			}
+			if (min > a[i]) {
+				min = a[i];
+			}
+		}
+		System.out.println("maximum no in array:- " + max);
+		System.out.println("minimum no in array:- " + min);
+	}
+================================================================================================================================================
+39. SearchElementInArray
+
+public static void main(String[] args) {
+
+		int[] a = { 91, 29, 47, 58, 35, 63, 87, 78, 17 };
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number:- ");
+		int num = sc.nextInt();
+		sc.close();
+		boolean found = false;
+
+		for (int i = 0; i < a.length; i++) {
+			if (num == a[i]) {
+				found = true;
+				System.out.println(num + " number is found in array:- " + i);
+				break;
+			}
+		}
+		if (!found) {
+			System.out.println(num + " number is not found in array");
+		}
+	}
+================================================================================================================================================
+40. RemoveSpecialCharctersSpacesFromString
+
+public static void main(String[] args) {
+		String Str="#$7894$%^& $adft234% ACBDE()";
+		String Str2 = Str.replaceAll("[^a-zA-Z0-9]", "");
+
+		System.out.println(Str2);
+	}
+================================================================================================================================================
+41. RemoveSpacesFromString
+
+	public static void main(String[] args) {
+		String str="A B C D";
+		String Str1=str.replaceAll("\\s", "");
+		System.out.println(Str1);
+	}
+================================================================================================================================================
+42. OccurenceOfEachCharactersInString
+
+public static void main(String[] args) {
+		String string1 = "kapil patil";  
+        int count;  
+          
+        //Converts given string into character array  
+        char string[] = string1.toCharArray();  
+          
+        System.out.println("Duplicate characters in a given string: ");  
+        //Counts each character present in the string  
+        for(int i = 0; i <string.length; i++) {  
+            count = 1;  
+            for(int j = i+1; j <string.length; j++) {  
+                if(string[i] == string[j] && string[i] != ' ') {  
+                    count++;  
+                    //Set string[j] to 0 to avoid printing visited character  
+                    string[j] = '0';  
+                }  
+            }  
+            //A character is considered as duplicate if count is greater than 1  
+            //if(count > 1 && string[i] != '0')
+            //Display all words count
+            if(string[i] != '0')
+                System.out.println(string[i]+ " "+ count);  
+        }  
+	}
+
+
+ OccurenceofEachWordInString
+
+	public static void main(String[] args) {
+		
+		String string = "my name is kapil my name";  
+        int count;  
+        //Converts the string into lowercase  
+        string = string.toLowerCase();  
+          
+        //Split the string into words using built-in function  
+        String words[] = string.split(" ");  
+          
+        System.out.println("Duplicate words in a given string : ");   
+        for(int i = 0; i < words.length; i++) {  
+            count = 1;  
+            for(int j = i+1; j < words.length; j++) {  
+                if(words[i].equals(words[j])) {  
+                    count++;  
+                    //Set words[j] to 0 to avoid printing visited word  
+                    words[j] = "0";  
+                }  
+            }   
+            //Displays the duplicate word if count is greater than 1  
+           //if(count > 1 && words[i] != "0")  
+            //Display all words count
+            if(words[i] != "0")  
+                System.out.println(words[i]+" "+ count);  
+        }  
+    }  
+
+RemoveDuplicatesInStringwithLastOccurrences
+
+public static String removeDuplicates(String str) {
+		// Used as index in the modified String
+		int n = str.length();
+
+		// Traverse through all characters
+		String res = "";
+		for (int i = 0; i < n; i++) {
+			// Check if str[i] is present before it
+			int j;
+			for (j = i + 1; j < n; j++)
+				if (str.charAt(i) == str.charAt(j))
+					break;
+			// If not present, then add it to
+			// result.
+			if (j == n)
+				res = res + str.charAt(i);
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		String str = "london don";
+		System.out.println(removeDuplicates(str));
+	}
+================================================================================================================================================
+43. ReverseEachEveryWordInString
+
+public static void main(String[] args) {
+
+		String str = "My Name is Kapil";        // output= yM emaN si lipaK
+		String[] words = str.split(" ");
+		String reverseString = "";
+
+		for (String word : words) {
+			String reverseWord = "";
+
+			for (int i = word.length() - 1; i >= 0; i--) {
+				reverseWord = reverseWord + word.charAt(i);
+			}
+			reverseString = reverseString + reverseWord + " ";
+		}
+		System.out.println("Reverse String:- "+reverseString);
+	}
+=================================================================================================================================================
+44. FactorsOfNumberFactorCount
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number:- ");
+		int num = sc.nextInt();
+
+		int factorCount = 0;
+		System.out.println("Factors of given number are Below:-");
+		for (int i = 1; i <= num; i++) {
+			if (num % i == 0) {
+				System.out.print(i + " ");
+				factorCount++;
+			}
+		}
+		System.out.println();
+		System.out.println("Total factor count is:- " + factorCount);
+	}
+================================================================================================================================================
+45. PyramidPattern
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5 - i; j++) {
+				System.out.print(" ");
+			}
+			for (int k = 0; k <= i; k++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+46. TriangularNumberPyramid
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+47. NumberPyramid
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5 - i; j++) {
+				System.out.print(" ");
+			}
+			for (int k = 0; k <= i; k++) {
+				System.out.print(k + " ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+48. GreatestCommonDivisor
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter First Number:");
+		int firstNum = sc.nextInt();
+		System.out.println("Enter Second Number:");
+		int secondNum = sc.nextInt();
+		sc.close();
+		int gcd = 0;
+
+		for (int i = 1; i <= firstNum && i <= secondNum; i++) {
+			if (firstNum % i == 0 && secondNum % i == 0) {
+				gcd = i;
+			}
+		}
+		System.out.println("Greatest Common divisor of number is:- "+ gcd);
+	}
+================================================================================================================================================
+49. ReverseFirstLastElementsInArray
+
+	public static void main(String[] args) {
+
+		int[] ab = { 5, 9, 7, 8, 6, 4 };
+
+		int start = 0;
+		int last = ab.length - 1;
+
+		int temp;
+		while (start < last) {
+			temp = ab[start];
+			ab[start] = ab[last];
+			ab[last] = temp;
+
+			start++;
+			last--;
+		}
+		System.out.println(Arrays.toString(ab));
+	}
+}
+================================================================================================================================================
+
+50. ReverseWordsPositionUsingCollections
+
+	public static void main(String[] args) {
+		
+		String Str= "This is a statement one";
+		String []word=Str.split(" ");
+		List<String> list= Arrays.asList(word);
+		Collections.reverse(list);
+		
+		for (String string : list) {
+			System.out.print(string+ " ");
+		}
+	}
+================================================================================================================================================
+51. PenultimateWordOfStatement
+
+public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Statement:- ");
+		String news=sc.nextLine();
+		sc.close();
+		String[]words= news.split(" ");
+		if (words.length>1) {
+			System.out.println("Penultimate Word Of Statement:- "+ words[words.length-2]);
+		}else {
+			System.out.println("The Statement is having only word");
+		}
+	}
+================================================================================================================================================
+52. String_Vowels_Consonant
+
+public static void main(String[] args) {
+		
+		String str = "KAPILPATIL";
+		str = str.toLowerCase();
+		// char []c= str.toCharArray();
+		int Vcount = 0;
+		int Ccount = 0;
+		System.out.println("Vowels in given String are:-");
+
+		for (int i = 0; i <= str.length() - 1; i++) {
+			if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o'
+					|| str.charAt(i) == 'u') {
+				Vcount++;
+			} else if (str.charAt(i) >= 'a' && str.charAt(i) >= 'a') {
+				Ccount++;
+			}
+		}
+		System.out.println(Vcount);
+		System.out.println(Ccount);
+	}
+================================================================================================================================================
+53. SwapFirstLastElementOfArray
+
+	public static void main(String[] args) {
+		
+		int a[]= {4,5,9,8,6,3};
+		int temp=a[0];
+		int size= a.length;
+		
+		a[0]=a[size-1];
+		a[size-1]=temp;
+		
+		System.out.println(Arrays.toString(a));
+	}
+=================================================================================================================================================
+54. MergeTwoSortedArrayIntoThird
+
+	public static void main(String[] args) {
+		int[] a = { 1, 2, 3 };
+		int[] b = { 2, 4, 6, 8 };
+
+		int as = a.length;
+		int bs = b.length;
+
+		int[] c = new int[as + bs];
+		int i = 0;
+		int j = 0;
+		int k = 0;
+
+		while (i < as && i < bs) {
+
+			if (a[i] <= b[i]) {
+				c[k] = a[i];
+				i++;
+				k++;
+			} else {
+				c[k] = b[j];
+				j++;
+				k++;
+			}
+		}
+		while (i < as) {
+			c[k] = a[i];
+			i++;
+			k++;
+		}
+		while (j < bs) {
+			c[k] = b[j];
+			j++;
+			k++;
+		}
+		System.out.println(Arrays.toString(c));
+	}
+================================================================================================================================================
+55. PrimeNumber
+
+public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number:- ");
+		int num = sc.nextInt();
+		boolean isPrime = true;
+
+		if (num > 1) {
+			for (int i = 2; i < num; i++) {
+				if (num % 2 == 0) {
+					isPrime = false;
+				}
+			}
+		} else {
+			isPrime = false;
+		}
+		if (isPrime) {
+			System.out.println(num + " is prime number.");
+		} else {
+			System.out.println(num + " is not prime number.");
+		}
+	}
+================================================================================================================================================
+56. PrimeNumberInGivenRange
+
+public static void main(String[] args) {
+		for (int i = 1; i <= 100; i++) {
+
+			boolean isPrime = true;
+			if (i > 1) {
+				for (int j = 2; j < i; j++) {
+					if (i % j == 0) {
+						isPrime = false;
+					}
+				}
+			} else {
+				isPrime = false;
+			}
+			if (isPrime) {
+				System.out.print(i + " ");
+			}
+		}
+	}
+================================================================================================================================================
+57. RightTriangleStarPattern
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+58. LeftTriangleStarPattern
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) { // 1 2
+			for (int j = 1; j < 2 * (5 - i); j++) {
+				System.out.print(" ");
+			}
+			for (int k = 0; k <= i; k++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+59. ReversePyramidStarPattern
+
+public static void main(String[] args) {
+		
+		for (int i = 0; i < 5; i++) {
+			
+			for (int j = 0; j < i; j++) {
+				System.out.print(" ");
+			}
+			
+			for (int K = 5-i; K > 0; K--) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+60. DiamondShapeStarPattern
+
+
+public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 5 - i; j > 0; j--) {
+				System.out.print(" ");
+			}
+			for (int k = 1; k <= 2 * i - 1; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for (int i = 4; i > 0; i--) {
+			for (int j = 4 - i; j >= 0; j--) {
+				System.out.print(" ");
+			}
+			for (int K = 1; K <= 2 * i - 1; K++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+61. DownwardTriangleStarPattern
+
+
+public static void main(String[] args) {
+		for (int i = 5; i > 0; i--) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+62. MirroredRightTriangleStarPattern
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 1; j < 5 - i; j++) {
+				System.out.print(" ");
+			}
+			for (int k = 0; k <= i; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+63. MirroredRightDownTriangleStarPattern
+
+	public static void main(String[] args) {
+
+		for (int i = 5; i > 0; i--) {
+			for (int j = 5; j > i; j--) {
+				System.out.print(" ");
+			}
+			for (int k = 1; k <= i; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+64. RightPascalTriangleStarPattern
+
+public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		for (int k = 4; k >= 1; k--) {
+			for (int j = 1; j <= k; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+65. LeftPascalTriangleStarPattern
+
+public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= 5 - i; j++) {
+				System.out.print(" ");
+			}
+			for (int k = 1; k <= i; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= 4; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
+			for (int k = 1; k <= 5 - i; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+66. SandglassStarPattern
+
+public static void main(String[] args) {
+		for (int i = 5; i > 0; i--) {// 5
+			for (int j = 5 - i; j >= 1; j--) {// 5 4
+				System.out.print(" ");
+			}
+			for (int k = 1; k <= i; k++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= 5 - i; j++) {
+				System.out.print(" ");
+			}
+			for (int k = 1; k <= i; k++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+67. PyramidBorderStarPattern
+
+	public static void main(String[] args) {
+		for (int i = 1; i <=5; i++) {
+			
+			//spaces
+			for (int j = 1; j <=5-i; j++) {
+				System.out.print(" ");
+			}
+			//Stars
+			for (int k =1; k <= 2*i-1; k++) {
+				
+				if(k==1 || k==2*i-1 || i==5) {
+					System.out.print("*");
+				}else
+				{
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+================================================================================================================================================
+68. FirstNonRepeatedCharacterInString
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any string text:");
+		String str = sc.nextLine().toLowerCase();
+		sc.close();
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		boolean status = false;
+
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+
+			if (map.get(ch) == null) {
+				map.put(ch, 1);
+			} else {
+				map.put(ch, map.get(ch) + 1);
+			}
+		}
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if (map.get(ch) == 1) {
+				System.out.println("First non repeated character in the given string text is: " + ch);
+				status = true;
+				break;
+			}
+		}
+		if (!status) {
+			System.out.println("There is no unique character in given string text.");
+		}
+	}
+================================================================================================================================================
+69. AnagramsStringCheckWithCollection
+
+	Anagrams == 1. Two String with same length (When Space is removed)
+		    2. Characters in both String should be same despite of having different order
+			e.g. str1=BAT str2=TAB
+
+public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter first String");
+		String str1= sc.nextLine().toLowerCase().replaceAll("\\s", "");
+		System.out.println("Enter second String");
+		String str2= sc.nextLine().toLowerCase().replaceAll("\\s", "");
+		sc.close();
+		
+		if(isAnagram(str1, str2)) {
+			System.out.println("Given first String "+str1+" and second string "+str2+" are Anagrams");
+		}else {
+			System.out.println("Given first String "+str1+" and second string"+str2+" are not Anagrams");
+		}
+
+	}
+	public static boolean isAnagram(String str1, String str2) {
+		Map<Character, Integer> map1= new HashMap<Character, Integer>();
+		Map<Character, Integer> map2= new HashMap<Character, Integer>();
+		
+		for(int i =0; i<str1.length();i++) {
+			char ch= str1.charAt(i);
+			if(map1.get(ch)==null) {
+				map1.put(ch, 1);
+			}else {
+				map1.put(ch, map1.get(ch)+1);
+			}
+		}
+		for(int i=0; i< str2.length(); i++) {
+			char ch= str2.charAt(i);
+			if(map2.get(ch)==null) {
+				map2.put(ch,1);
+			}else {
+				map2.put(ch,  map2.get(ch)+1);
+			}
+		}
+		return map1.equals(map2);
+	}
+================================================================================================================================================
+70. AnagramsStringCheckWithSortingTechnique
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter First String");
+		String str1 = sc.nextLine().toLowerCase().replaceAll("\\s", "");
+		System.out.println("Enter Second String");
+		String str2 = sc.nextLine().toLowerCase().replaceAll("\\s", "");
+		sc.close();
+
+		if (isAnagram(str1, str2)) {
+			System.out.println("String " + str1 + " is an Anagram of String " + str2);
+		} else {
+			System.out.println("String " + str1 + " is not an Anagram of String " + str2);
+		}
+
+	}
+
+	public static boolean isAnagram(String str1, String str2) {
+
+		char ca1[] = str1.toCharArray();
+		char ca2[] = str2.toCharArray();
+		Arrays.sort(ca1);
+		Arrays.sort(ca2);
+
+		return Arrays.equals(ca1, ca2);
+	}
+================================================================================================================================================
+71. CheckNumberIsPowerofFour
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ente any Number: ");
+		int num = sc.nextInt();
+		sc.close();
+
+		boolean power = false;
+
+		while (num > 0) {
+			int reminder = num % 4;
+			if (reminder != 0) {
+				break;
+			}
+			num = num / 4;
+			if (num == 1) {
+				System.out.println("Given number is power of 4");
+				power = true;
+				break;
+			}
+		}
+		if (!power) {
+			System.out.println("Given number is a power of 4");
+		}
+	}
+================================================================================================================================================
+72. DownTriangleBorderPattern
+
+public static void main(String[] args) {
+
+		for (int i = 5; i > 0; i--) {
+
+			for (int j = 5 - i; j > 0; j--) {
+				System.out.print(" ");
+			}
+
+			for (int k = 2 * i - 1; k > 0; k--) {
+
+				if (i == 5 || k == 2 * i - 1 || k == 1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+73. DiamondBorderStarPattern
+
+	public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {
+			// spaces
+			for (int j = 1; j <= 5 - i; j++) {
+				System.out.print(" ");
+			}
+			// star
+			for (int k = 1; k <= 2 * i - 1; k++) {
+				if (k == 1 || k == 2 * i - 1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+
+		}
+
+		for (int i = 4; i >= 1; i--) {
+			// spaces
+			for (int j = 1; j <= 5 - i; j++) {
+				System.out.print(" ");
+			}
+			// star
+			for (int k = 1; k <= 2 * i - 1; k++) {
+				if (k == 1 || k == 2 * i - 1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+74. NumberPattern
+
+	public static void main(String[] args) {
+		
+		for (int i = 1; i <=5; i++) {
+		
+			for (int j = 1; j <=i; j++) {
+				System.out.print(j+" ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+75. FloydsTringleNumber
+
+public static void main(String[] args) {
+
+		int c = 1;
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print(c + " ");
+				c++;
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+76. PascalTriangle
+
+public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			// spaces
+			for (int j = 1; j <= 5 - i; j++) {
+				System.out.print(" ");
+			}
+			// Number
+			int number = 1;
+			for (int k = 0; k <= i; k++) {
+				System.out.print(number + " ");
+				number = number * (i - k) / (k + 1);
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+77. NumberPattern1
+
+public static void main(String[] args) {
+		
+		for (int i = 1; i <=5; i++) {
+			for (int j = 1; j <=i; j++) {
+				System.out.print(i+" ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+78. NumberPattern2
+
+public static void main(String[] args) {                        
+		for (int i = 5; i >= 1; i--) {
+			for (int j = 1; j <=i; j++) {
+				System.out.print(i+ " ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+79. NumberPattern3
+
+	public static void main(String[] args) {
+		
+		for (int i = 5; i >=1; i--) {
+			for (int j = 5; j>=i ; j--) {
+				System.out.print(j+" ");		
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+80. NumberPattern4
+
+public static void main(String[] args) {
+		
+		for (int i = 1; i <=5; i++) {
+			for (int j = i; j >=1; j--) {
+				System.out.print(j+" ");
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+81. NumberPattern5
+
+public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= i; j++) {
+				if (j % 2 == 0) {
+					System.out.print(0);
+				} else {
+					System.out.print(1);
+				}
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+82. NumberPattern6
+
+public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {                                      
+			int num;
+			if (i % 2 == 0) {
+				num = 0;
+				System.out.print(num);
+			} else {
+				num = 1;
+				System.out.print(num);
+			}
+			for (int j = 1; j < 5; j++) {
+				if (num == 1) {
+					num = 0;
+				} else {
+					num = 1;
+				}
+				System.out.print(num);
+			}
+			System.out.println();
+		}
+	}
+
+or
+
+for (int i = 1; i <= 5; i++) {
+			int num = i % 2 == 0 ? 0 : 1;
+			System.out.print(num);
+			for (int j = 1; j < 5; j++) {
+				num = num == 1 ? 0 : 1;
+				System.out.print(num);
+			}
+			System.out.println();
+		}
+	}
+================================================================================================================================================
+83. 
+
