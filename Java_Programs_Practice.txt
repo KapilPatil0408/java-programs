@@ -242,10 +242,12 @@ public static void main(String[] args) {
 			System.out.println("Given number is not palindrome");
 		}
 	}
+
 ================================================================================================================================================
 
 13. PalindromeString
 
+// Example 1:- 
 public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Enter String:");
@@ -263,6 +265,41 @@ public static void main(String[] args) {
 			System.out.println("String is not palindrome");
 		}
 	}
+
+// Example 2 -----> String a = "abc@,@d=cb@a"; palindrome or not 
+
+class Main {
+    public static void main(String[] args) {
+        String a = "abc@,@d=cb@a";
+        String b = "";
+
+        char ca[] = a.toCharArray();
+
+        // Build the reversed filtered string
+        for (int i = ca.length - 1; i >= 0; i--) {
+            // Check if the character is one of the valid characters
+            if ((ca[i] >= 'a' && ca[i] <= 'z') || (ca[i] >= 'A' && ca[i] <= 'Z') || (ca[i] >= '0' && ca[i] <= '9')) {
+                b += Character.toLowerCase(ca[i]); // Convert to lowercase for case-insensitivity
+            }
+        }
+
+        // Build the filtered version of the original string
+        String filteredOriginal = "";
+        for (int i = 0; i < ca.length; i++) {
+            if ((ca[i] >= 'a' && ca[i] <= 'z') || (ca[i] >= 'A' && ca[i] <= 'Z') || (ca[i] >= '0' && ca[i] <= '9')) {
+                filteredOriginal += Character.toLowerCase(ca[i]); // Convert to lowercase for case-insensitivity
+            }
+        }
+
+        // Compare the filtered original string with the reversed filtered string
+        if (filteredOriginal.equals(b)) {
+            System.out.println("String is palindrome");
+        } else {
+            System.out.println("String is not palindrome");
+        }
+    }
+}
+
 ================================================================================================================================================
 
 14. PerimeterOfCircle
