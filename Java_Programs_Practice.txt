@@ -1708,5 +1708,50 @@ for (int i = 1; i <= 5; i++) {
 		}
 	}
 ================================================================================================================================================
-83. 
+83. WAP to get a new array from 2 arrays-
+ char[] s1= {'A','B','C','D','E','t','Z'};
+ char[] s2= {'c','d','e','f'};
+ Output- {a,C,b,D,c,E,d,F,e,t,z}
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MergeCharArrays {
+    public static void main(String[] args) {
+        char[] s1 = {'A', 'B', 'C', 'D', 'E', 't', 'Z'};
+        char[] s2 = {'c', 'd', 'e', 'f'};
+
+        List<Character> resultList = new ArrayList<>();
+
+        int i = 0, j = 0;
+        while (i < s1.length || j < s2.length) {
+            if (i < s1.length) {
+                resultList.add(i % 2 == 0 ? Character.toLowerCase(s1[i]) : s1[i]);
+                i++;
+            }
+            if (j < s2.length) {
+                resultList.add(Character.toUpperCase(s2[j]));
+                j++;
+            }
+        }
+
+        // Convert list to character array
+        char[] resultArray = new char[resultList.size()];
+        for (int k = 0; k < resultList.size(); k++) {
+            resultArray[k] = resultList.get(k);
+        }
+
+        // Print the output array
+        System.out.println("Output Array: " + java.util.Arrays.toString(resultArray));
+    }
+}
+
+Step	Processed Character from s1	Processed Character from s2	Final Merged List
+1	a' (Converted 'A')	            C' (Converted 'c')	         ['a', 'C']
+2	B'	                            D' (Converted 'd')		 ['a', 'C', 'B', 'D']
+3	c' (Converted 'C')		    E' (Converted 'e')		 ['a', 'C', 'B', 'D', 'c', 'E']
+4	D'				    F' (Converted 'f')		 ['a', 'C', 'B', 'D', 'c', 'E', 'D', 'F']
+5	e' (Converted 'E')						 ['a', 'C', 'B', 'D', 'c', 'E', 'D', 'F', 'e']
+6	t'								 ['a', 'C', 'B', 'D', 'c', 'E', 'D', 'F', 'e', 't']
+7	z' (Converted 'Z')						['a', 'C', 'B', 'D', 'c', 'E', 'D', 'F', 'e', 't', 'z']
 
