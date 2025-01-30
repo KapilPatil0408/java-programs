@@ -64,6 +64,57 @@
 		}
 	}
 
+public static boolean checkAnagramNumber(int numb) {
+		
+		int originalNumber= numb;
+		int cubbedNum=0;
+		boolean isAnagramNumber;
+		
+		while(numb>0) {
+			int remider = numb%10;
+			cubbedNum += remider* remider* remider;
+			numb = numb/10;
+		}
+		if(originalNumber==cubbedNum) {
+			isAnagramNumber = true;
+		}else {
+			isAnagramNumber =  false;
+		}
+		
+		return isAnagramNumber;
+	}
+
+
+    public static boolean isArmstrong(int numb) {
+        int originalNumber = numb;
+        int sum = 0;
+        int numDigits = 0;
+        int temp = numb;
+
+        // Count the number of digits
+        while (temp > 0) {
+            numDigits++;
+            temp /= 10;
+        }
+
+        // Compute the sum of each digit raised to the power of numDigits
+        temp = numb; // Reset temp to original number
+        while (temp > 0) {
+            int digit = temp % 10;
+            int power = digit;
+
+            // Compute digit^numDigits using remainder-based multiplication
+            for (int i = 1; i < numDigits; i++) {
+                power *= digit; // Equivalent to raising digit to numDigits
+            }
+
+            sum += power;
+            temp /= 10; // Remove last digit
+        }
+
+        return originalNumber == sum;
+    }
+
 ======================================================================================================================================================
 
 5. CheckEvenOddNumbers
