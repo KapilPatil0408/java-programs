@@ -953,6 +953,96 @@ public static String removeDuplicates(String str) {
 		String str = "london don";
 		System.out.println(removeDuplicates(str));
 	}
+
+Print maximum and minimum repeating character from String:-
+
+Approach 1:-
+public class CharFrequency {
+    public static void stringDuplicateCount(String str) {
+        int[] freq = new int[256]; // Array to store character frequencies (for ASCII characters)
+
+        // Count frequency of each character
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c != ' ') { // Ignore spaces
+                freq[c]++;  // Increment the count of the character
+            }
+        }
+
+        char maxChar = '\0', minChar = '\0';
+        int maxCount = Integer.MIN_VALUE, minCount = Integer.MAX_VALUE;
+
+        // Find max and min repeated characters
+        for (int i = 0; i < 256; i++) {
+            if (freq[i] > 0) { // Consider only characters that appear in the string
+                if (freq[i] > maxCount) {
+                    maxCount = freq[i];
+                    maxChar = (char) i;
+                }
+                if (freq[i] < minCount) {
+                    minCount = freq[i];
+                    minChar = (char) i;
+                }
+            }
+        }
+
+        // Output results
+        System.out.println("Max Repeated Character: " + maxChar + " (Count: " + maxCount + ")");
+        System.out.println("Min Repeated Character: " + minChar + " (Count: " + minCount + ")");
+    }
+
+    public static void main(String[] args) {
+        stringDuplicateCount("hello world");
+    }
+}
+
+Approach 2:-
+
+public class CharFrequency {
+    public static void stringDuplicateCount(String str) {
+        Map<Character, Integer> charCountMap = new HashMap<>();
+
+        // Count the frequency of each character
+        for (char c : str.toCharArray()) {
+            if (c != ' ') { // Ignore spaces
+                charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+            }
+        }
+
+        char maxChar = '\0', minChar = '\0';
+        int maxCount = Integer.MIN_VALUE, minCount = Integer.MAX_VALUE;
+
+        // Find max and min repeated characters
+        for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
+            char ch = entry.getKey();
+            int count = entry.getValue();
+
+            // Update max character
+            if (count > maxCount) {
+                maxCount = count;
+                maxChar = ch;
+            }
+
+            // Update min character (only consider repeating characters)
+            if (count < minCount) {
+                minCount = count;
+                minChar = ch;
+            }
+        }
+
+        // Output results
+        System.out.println("Max Repeated Character: " + maxChar + " (Count: " + maxCount + ")");
+        System.out.println("Min Repeated Character: " + minChar + " (Count: " + minCount + ")");
+    }
+
+    public static void main(String[] args) {
+        stringDuplicateCount("hello world");
+    }
+}
+
+
+
+
 ================================================================================================================================================
 43. ReverseEachEveryWordInString
 
