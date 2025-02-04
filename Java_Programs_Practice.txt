@@ -1040,8 +1040,77 @@ public class CharFrequency {
     }
 }
 
+Reverse String without compremissing while space  I/O- "Today is Monday" O/P- "yadno Ms iyadoT"
 
+Approach 1: - two pointer
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		reverseStringPreserveSpaces("Today is Monday");
+	}
 
+	    public static String reverseStringPreserveSpaces(String s) {
+	        // Convert the string to a character array
+	        char[] chars = s.toCharArray();
+
+	        // Initialize pointers
+	        int left = 0;
+	        int right = chars.length - 1;
+
+	        while (left < right) {
+	            // Skip spaces
+	            if (chars[left] == ' ') {
+	                left++;
+	            } else if (chars[right] == ' ') {
+	                right--;
+	            } else {
+	                // Swap characters
+	                char temp = chars[left];
+	                chars[left] = chars[right];
+	                chars[right] = temp;
+	                left++;
+	                right--;
+	            }
+	        }
+	        
+	        System.out.println(chars);
+
+	        // Convert the character array back to a string
+	        return new String(chars);
+	}
+
+Approach 2:-
+
+ public static String reverseStringPreserveSpaces(String s) {
+	       
+	        // Convert the string to a character array
+	        char[] chars = s.toCharArray();
+	        // Create a result array to store the reversed string
+	        char[] result = new char[chars.length];
+
+	        // Copy spaces to their original positions in the result array
+	        for (int i = 0; i < chars.length; i++) {
+	            if (chars[i] == ' ') {
+	                result[i] = ' ';
+	            }
+	        }
+
+	        // Fill the result array with reversed non-space characters
+	        int j = chars.length - 1; // Start from the end of the input array
+	        for (int i = 0; i < chars.length; i++) {
+	            if (chars[i] != ' ') {
+	                // Skip spaces in the result array
+	                while (j >= 0 && result[j] == ' ') {
+	                    j--;
+	                }
+	                // Place the character in the result array
+	                result[j] = chars[i];
+	                j--;
+	            }
+	        }
+	        System.out.println(result);
+	        // Convert the result array back to a string
+	        return new String(result);
+	    }
 
 ================================================================================================================================================
 43. ReverseEachEveryWordInString
