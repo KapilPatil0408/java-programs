@@ -323,7 +323,7 @@ public static void main(String[] args) {
 	}
 
 // Example 2 -----> String a = "abc@,@d=cb@a"; palindrome or not 
-
+Approach 1:-
 class Main {
     public static void main(String[] args) {
         String a = "abc@,@d=cb@a";
@@ -355,6 +355,33 @@ class Main {
         }
     }
 }
+
+Approach 2:-
+
+public static void checkStringPalindrome() {
+		
+		String originalString= "abc@,@d=cb@a";
+		String reverseString="";
+		
+		originalString= originalString.replaceAll("[^a-zA-Z0-9]", "");
+		System.out.println(originalString);
+		
+		for(int i= originalString.length()-1; i>=0; i--) {
+			reverseString = reverseString + originalString.charAt(i);
+		}
+		
+		System.out.println(reverseString);
+		
+		if(reverseString.equals(originalString)) {
+			System.out.println("String is palindrome");
+		}else {
+			System.out.println("String is not palindrome");
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		checkStringPalindrome();
+	}
 
 ================================================================================================================================================
 
