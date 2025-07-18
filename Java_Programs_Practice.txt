@@ -1443,6 +1443,27 @@ public static void main(String[] args) {
 			}
 		}
 	}
+
+
+Prime number in Array:-
+
+int[]a= {3,5,6,8,11,15,17,18,21,23};
+      
+      for(int i=0; i<a.length; i++){
+          boolean isPrime = true;
+          if(a[i]>1){
+     for(int j=2; j<a[i]; j++) {         
+          if(a[i] % j==0){
+              isPrime = false;
+          }
+          }
+          } else{
+              isPrime = false;
+          }
+          if(isPrime){
+          System.out.println(a[i]+ " = isPrime");
+          }
+      }
 ================================================================================================================================================
 57. RightTriangleStarPattern
 
