@@ -1389,6 +1389,21 @@ public static void main(String[] args) {
 			System.out.println("The Statement is having only word");
 		}
 	}
+
+
+public class PenultimateWord {
+    public static void main(String[] args) {
+        String sentence = "Java programming is fun";
+        String[] words = sentence.trim().split("\\s+");
+
+        if (words.length < 2) {
+            System.out.println("No penultimate word exists.");
+        } else {
+            System.out.println("Penultimate word: " + words[words.length - 2]);
+        }
+    }
+}
+
 ================================================================================================================================================
 52. String_Vowels_Consonant
 
