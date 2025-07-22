@@ -423,6 +423,18 @@ public static void main(String[] args) {
 		}
 		System.out.println(reversString);
 	}
+
+String s="Achal Joshi";    // Scenario2 output - lahcA ihsoJ
+        String[] s1= s.split(" ");
+        
+        for(String sw:s1){
+            String reverseWords="";
+        for(int i= sw.length()-1; i>=0; i--){
+            reverseWords = reverseWords+ sw.charAt(i);
+        }    
+        System.out.print(reverseWords+ " ");
+        }
+
 ================================================================================================================================================
 
 17. StringCountDetails
